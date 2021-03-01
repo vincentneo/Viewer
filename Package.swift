@@ -1,3 +1,4 @@
+// swift-tools-version:5.0
 // Licensed under the **MIT** license
 // Copyright (c) 2016 Elvis Nuñez
 //
@@ -23,5 +24,20 @@
 import PackageDescription
 
 let package = Package(
-    name: "Viewer"
+    name: "Viewer",
+    platforms: [
+        .iOS(.v11), .tvOS(.v11)
+    ],
+    products: [
+        .library(
+            name: "Viewer",
+            targets: ["Viewer"]),
+        ],
+    targets: [
+        .target(
+            name: "Viewer",
+            dependencies: [],
+            path: "Source"),
+        ],
+    swiftLanguageVersions: [ .v5 ]
 )
